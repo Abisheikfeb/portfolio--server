@@ -1,8 +1,19 @@
 const mongoose = require('mongoose');
 
+// Define schema for view counts
 const viewSchema = new mongoose.Schema({
-  projectId: { type: Number, required: true, unique: true },  // Unique ID for each project
-  views: { type: Number, default: 0 },  // Initial view count is 0
+  projectId: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  count: {
+    type: Number,
+    default: 0,
+  },
 });
 
-module.exports = mongoose.model('View', viewSchema);
+const View = mongoose.model('View', viewSchema);
+
+module.exports = View;
+
