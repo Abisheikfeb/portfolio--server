@@ -15,6 +15,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Root Route
+app.get('/', (req, res) => {
+  res.send('Backend Server is Running Successfully!');
+});
+
 // API Routes
 app.use('/api/auth', authRoutes); // Authentication routes
 app.use('/api/likes', likeRoutes); // Like-related routes
